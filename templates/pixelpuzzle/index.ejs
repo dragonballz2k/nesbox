@@ -1,0 +1,87 @@
+<%- include('templates/header') %>
+
+<%
+	var res = model('pixelpuzzle');
+%>
+
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="img-responsive" src="/pixelpuzzle/img/pixelpuzzle-windows-store.png">
+			</div>
+
+			<div class="col-md-9">
+				<h1>Pixel Puzzle</h1>
+				<p><%= res.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	
+	<h3>Screenshots</h3>
+
+	<p>
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img-responsive thumbnail" src="/pixelpuzzle/img/1.png">
+			</div>
+			<div class="col-md-4">
+				<img class="img-responsive thumbnail" src="/pixelpuzzle/img/2.png">
+			</div>
+			<div class="col-md-4">
+				<img class="img-responsive thumbnail" src="/pixelpuzzle/img/3.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img-responsive thumbnail" src="/pixelpuzzle/img/4.png">
+			</div>
+
+			<div class="col-md-4">
+				<img class="img-responsive thumbnail" src="/pixelpuzzle/img/5.png">
+			</div>
+			
+		</div>
+	</p>
+
+	<hr>
+
+	<h3>Features</h3>
+	<ul>
+		<li>15 different animals</li>
+		<li>simple game</li>
+	</ul>
+
+	<hr>
+
+	<h3>Downloads</h3>
+	<p>
+		<a href="http://apps.microsoft.com/windows/app/3e0d35d2-d2c9-4928-958d-42153bfe20a1"><img src="https://cmsresources.windowsphone.com/devcenter/en-us/legacy_v1/img/badgegenerator/English_wstore_cyan_258x67.png" alt="Download from Windows Store" /></a>
+
+		<a href="http://windowsphone.com/s?appid=8d17bba4-51b8-418b-9f81-cebf2bb1c254"><img src="https://cmsresources.windowsphone.com/devcenter/en-us/legacy_v1/img/badgegenerator/English_wphone_black_258x67.png" alt="Download from Windows Store" /></a>		
+	</p>
+
+	<hr>
+
+	<p>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'nesbox-pixelpuzzle';
+		    
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</p>
+</div>
+
+<%- include('templates/footer') %>

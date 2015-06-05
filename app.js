@@ -1,5 +1,6 @@
 var ejs = require('ejs');
 var fs = require('fs');
+var watch = require('node-watch');
 
 function getTemplateFolder(filePath)
 {
@@ -31,6 +32,10 @@ function scanTemplates(basePath)
 			{
 				renderFile(filePath);
 			}
+			else if(file == 'model.json')
+			{
+
+			}
 			else if(file.indexOf('.ejs') < 0)
 			{
 				fs.createReadStream(filePath)
@@ -45,10 +50,22 @@ scanTemplates('templates');
 
 console.log('!!! website genereation completed');
 
+watch('templates', function(event, filename)
+{
+	console.log(event, filename);
+
+	scanTemplates('templates');
+});
+
 function model(name)
 {
-	var data = fs.readFileSync(['data', name + '.json'].join('/'), 'utf8');
-	return JSON.parse(data);
+	try
+	{
+		var data = fs.readFileSync(['templates', name, 'model.json'].join('/'), 'utf8');
+		return JSON.parse(data);
+	}
+	catch(error){}
+	return {};
 }
 
 function renderFile(filePath)

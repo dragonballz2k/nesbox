@@ -1,106 +1,101 @@
 <%- include('templates/header') %>
 
-<h2>Nesbox Emulator</h2>
-<h4>
-	Nesbox Emulator is a free multiplatform emulator of NES, SNES, SEGA, GAMEBOY video consoles.
-</h4>
+<%- include('templates/nesbox-header') %>
 
-<div class="row">
-	<a href="http://apps.microsoft.com/windows/app/58f54051-3213-43e9-ac0b-333064064ab6"><img width="800" src="/img/Laptop_Front.png"/></a>
-	<a href="http://www.windowsphone.com/s?appid=2665d6c7-024b-4459-aa6a-4cdc5c069141"><img width="200" src="/img/Phone_Front.png"/></a>
-</div>
+<div class="container">
 
-<h3>Release Notes</h3>
+	<div class="row">
 
-<h4>Version 1.2 <small>22.05.2015</small></h4>
-<ul>
-	<li>
-		Added setup gamepad page where you can change position of the buttons
-		<p>
-			<img src="/img/gamepad_animation.gif">
-		</p>
-	</li>
-	<li>Fixed some app crashes</li>
-</ul>
+		<div class="col-md-4">
+			<h2>News & Blog</h2>
 
-<h4>Version 1.1 <small>08.05.2015</small></h4>
-<ul>
-	<li>Supported video consoles: NES, Super Nintendo, Sega Genesis/MegaDrive, GameBoy Color/Advanced</li>
-	<li>Supported rom types: .nes .gen .smd .smc .gb .gbc .gba</li>
-	<li>Save/Load game state</li>
-	<li>The Library of added games</li>
-	<li>Keyboard support (allows to changed key bindings)</li>
-	<li>Screen gamepad (touch)</li>
-	<li>Xbox 360 Controller support</li>
-	<li>Search games over Internet</li>
-	<li>Supported platforms: Windows Store, Windows Phone, Adobe Flash (open source)</li>
-	
-</ul>
+			<div class="media">
+				<div class="media-left">
+					<a href="/emulator#release-notes">
+						<img width="64" class="media-object" src="/img/biglogo.png" alt="...">
+					</a>
+				</div>
 
-<p class="text-center">
-	<a href="http://apps.microsoft.com/windows/app/58f54051-3213-43e9-ac0b-333064064ab6"><img src="https://cmsresources.windowsphone.com/devcenter/en-us/legacy_v1/img/badgegenerator/English_wstore_cyan_258x67.png" alt="Download from Windows Store" /></a>
-	<a href="http://www.windowsphone.com/s?appid=2665d6c7-024b-4459-aa6a-4cdc5c069141"><img src="https://cmsresources.windowsphone.com/devcenter/en-us/legacy_v1/img/badgegenerator/English_wphone_black_258x67.png" alt="Download from Windows Store" /></a>							
-</p>
+				<div class="media-body">
+					<h4 class="media-heading"><a href="/emulator#release-notes">Nesbox Emulator v1.2 has been released</a></h4>
+					Added screen gamepad setup page
+					<span class="text-muted pull-right">02.06.2015</span>
+				</div>
+			</div>
 
-<hr>
+			<hr>
 
-<h2 class="text-center">Play in your browser or embed the emulator to your website</h2>
-
-<p>
-	<div class="text-center">
-		<div id="emulator">
-			<p>To play this game, please, download the latest Flash player!</p>
-			<br>
-			<a href="http://www.adobe.com/go/getflashplayer">
-				<img src="//www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="Get Adobe Flash player"/>
-			</a>
 		</div>
-	
+
+		<div class="col-md-8">
+			<h2>Our products</h2>
+
+			<div class="row">
+				<div class="col-md-6">
+
+					<div class="thumbnail">
+						<a href="/emulator"><img src="/emulator/img/nesbox-windows-store.png" alt="..."></a>
+						
+						<div class="caption">
+							<h3>Nesbox Emulator</h3>
+							<p><%= model('emulator').description %></p>
+							<p><a href="/emulator" class="btn btn-primary" role="button">Learn more</a></p>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="col-md-6">
+
+					<div class="thumbnail">
+						<a href="/pixelpuzzle"><img src="/pixelpuzzle/img/pixelpuzzle-windows-store.png" alt="..."></a>
+						
+						<div class="caption">
+							<h3>Pixel Puzzle</h3>
+							<p><%= model('pixelpuzzle').description %></p>
+							<p><a href="/pixelpuzzle" class="btn btn-primary" role="button">Learn more</a></p>
+						</div>
+					</div>
+
+				</div>
+				
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+
+					<div class="thumbnail">
+						<img src="/img/unknown-project.jpg" alt="...">
+						
+						<div class="caption">
+							<h3>???</h3>
+							<p><a href="#" class="btn btn-primary disabled" role="button">Learn more</a></p>
+						</div>
+					</div>
+
+				</div>	
+				<div class="col-md-6">
+
+					<div class="thumbnail">
+						<img src="/img/unknown-project.jpg" alt="...">
+						
+						<div class="caption">
+							<h3>???</h3>
+							<p><a href="#" class="btn btn-primary disabled" role="button">Learn more</a></p>
+						</div>
+					</div>
+
+				</div>	
+
+			</div>
+		</div>
+
+
 	</div>
-</p>
 
-<p class="text-center">
-	<iframe src="//ghbtns.com/github-btn.html?user=nesbox&repo=emulator&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
-	<iframe src="//ghbtns.com/github-btn.html?user=nesbox&repo=emulator&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>		
-</p>
 
-<p class="text-center">
-	<a class="btn btn-lg btn-info" href="http://nesbox.github.io/emulator/" target="_blank">Get more info about the web based emulator <span class="glyphicon glyphicon-chevron-right"></span></a>
-</p>
 
-<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-
-<script type="text/javascript">
-
-	var resizeOwnEmulator = function(width, height)
-	{
-		var emulator = $('#emulator');
-		emulator.css('width', width);
-		emulator.css('height', height);
-	}
-
-	$(function()
-	{
-		function embed()
-		{
-			var emulator = $('#emulator');
-			if(emulator)
-			{
-				var flashvars = {};
-				var params = {};
-				var attributes = {};
-				
-				params.allowscriptaccess = 'sameDomain';
-				params.allowFullScreen = 'true';
-				params.allowFullScreenInteractive = 'true';
-				
-				swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
-			}
-		}
-		
-		embed();
-	});
-	
-</script>
+</div>
 
 <%- include('templates/footer') %>
