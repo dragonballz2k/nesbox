@@ -1,0 +1,87 @@
+<%- include('templates/header') %>
+
+<div class="container">
+
+<%- include('templates/emulator/platform-tabs', {active:'flash'}) %>
+
+</div>
+
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="img-responsive" src="/emulator/flash/img/flash_logo.png">
+			</div>
+
+			<div class="col-md-9">
+				<h1>Nesbox Emulator</h1>
+				<p><b>built on Adobe Flash</b></p>
+				<p><%= model('emulator').flash.description %></p>
+				<p><a class="btn btn-primary btn-lg" href="https://github.com/nesbox/emulator" target="_blank">Learn more on Github</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+
+	<p>
+		<div class="hidden-xs hidden-sm">
+
+			<div id="emulator">
+				<p>To play this game, please, download the latest Flash player!</p>
+				<br>
+				<a href="http://www.adobe.com/go/getflashplayer">
+					<img src="//www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="Get Adobe Flash player"/>
+				</a>
+			</div>
+
+			<p>
+				<iframe src="//ghbtns.com/github-btn.html?user=nesbox&repo=emulator&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+				<iframe src="//ghbtns.com/github-btn.html?user=nesbox&repo=emulator&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+			</p>
+		
+		</div>
+	</p>
+
+<%- include('templates/emulator/comments') %>
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<script type="text/javascript">
+
+	var resizeOwnEmulator = function(width, height)
+	{
+		var emulator = $('#emulator');
+		emulator.css('width', width);
+		emulator.css('height', height);
+	}
+
+	$(function()
+	{
+		function embed()
+		{
+			var emulator = $('#emulator');
+			if(emulator)
+			{
+				var flashvars = {};
+				var params = {};
+				var attributes = {};
+				
+				params.allowscriptaccess = 'sameDomain';
+				params.allowFullScreen = 'true';
+				params.allowFullScreenInteractive = 'true';
+				
+				swfobject.embedSWF('/emulator/flash/flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', '/emulator/flash/flash/expressInstall.swf', flashvars, params, attributes);
+			}
+		}
+		
+		embed();
+	});
+	
+</script>
+
+<%- include('templates/footer') %>

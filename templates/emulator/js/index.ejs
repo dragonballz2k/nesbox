@@ -1,0 +1,107 @@
+<%- include('templates/header') %>
+
+<div class="container">
+
+<%- include('templates/emulator/platform-tabs', {active:'js'}) %>
+
+</div>
+
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="img-responsive" src="/emulator/js/img/js_logo.png">
+			</div>
+
+			<div class="col-md-9">
+				<h1>Nesbox Emulator</h1>
+				<p><b>built on JavaScript</b></p>
+				<p><%= model('emulator').js.description %></p>
+				<p><a class="btn btn-primary btn-lg" href="https://github.com/nesbox/emulator.js" target="_blank">Learn more on Github</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+
+	<h2>Demo version</h2>
+	<hr>
+	<p class="lead">Works without any problems on browsers which support <a target="_blank" href="https://en.wikipedia.org/wiki/Asm.js">ASM.js</a> technology like <a href="https://www.mozilla.org/firefox/">Mozilla Firefox</a> or <a href="http://windows.microsoft.com/en-us/windows/preview-microsoft-edge-pc">Microsoft Edge (Spartan)</a>, on other browsers works with small delays.</p>
+
+	<p>
+		<canvas id="nesbox-canvas"></canvas>	
+	</p>
+
+	<p>
+		<img src="/emulator/js/img/keyboard.png">
+	</p>
+
+	<p>
+		<div>
+			<span class="label label-default">UP</span>
+			<span class="label label-default">DOWN</span>
+			<span class="label label-default">LEFT</span>
+			<span class="label label-default">RIGHT</span> - <span class="label label-primary">arrows</span>
+		</div>
+
+		<div>
+			<span class="label label-default">SELECT</span> - <span class="label label-primary">space</span>, 
+			<span class="label label-default">START</span> - <span class="label label-primary">enter</span>
+		</div>
+
+		<div>
+			<span class="label label-default">A</span> - <span class="label label-primary">z</span>, 
+			<span class="label label-default">B</span> - <span class="label label-primary">x</span>, 
+			<span class="label label-default">C</span> - <span class="label label-primary">c</span>
+		</div>
+
+		<div>
+			<span class="label label-default">X</span> - <span class="label label-primary">a</span>, 
+			<span class="label label-default">Y</span> - <span class="label label-primary">s</span>, 
+			<span class="label label-default">Z</span> - <span class="label label-primary">d</span>
+		</div>
+
+		<div>
+			<span class="label label-default">R</span> - <span class="label label-primary">d</span>, 
+			<span class="label label-default">L</span> - <span class="label label-primary">c</span>
+		</div>
+
+	</p>
+
+
+	<hr>
+
+	<div>
+		<h3>How to embed it to your website?</h3>
+		Coming soon...
+	</div>
+
+	<script type="text/javascript">
+		var canvas = document.getElementById("nesbox-canvas");
+		var context = canvas.getContext("2d");
+		context.rect(0,0,300,150);
+		context.fillStyle = "black";
+		context.fill();
+		context.fillStyle = "white";
+		context.fillText("Loading emulator, please wait...", 10, 20);
+	</script>
+
+	<script type="text/javascript">
+
+		var Module = 
+		{
+			canvas: document.getElementById('nesbox-canvas'),
+			rom: '/emulator/js/roms/chip.nes'
+		};
+	</script>
+
+	<script async type="text/javascript" src="/emulator/js/js/nesbox.js"></script>
+	<script type="text/javascript" src="/emulator/js/js/emulator.js"></script>
+
+<%- include('templates/emulator/comments') %>
+
+</div>
+
+<%- include('templates/footer') %>
